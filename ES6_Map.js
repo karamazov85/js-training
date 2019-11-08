@@ -128,3 +128,24 @@ const addPeople_v2 = (map, number) => {
 console.log(addPeople_v2(sportsMap, 500))
 
 // again, I have no ide why this won't work...
+
+// test for next workaround 
+
+const testArray = [...sportsMap];
+
+testArray.forEach( keyValue => keyValue[1] += 500) // so it works this way...
+
+console.log(testArray)
+
+// 6. Workaround #2. Same as above just different syntax in forEach as above
+
+const addPeople_v3 = (map, number) => {
+  const keysAndValues = [...map];
+  keysAndValues.forEach((keyValue) => keyValue[1] += number);
+  const newMap = new Map(keysAndValues);
+  return newMap;
+}
+
+console.log(addPeople_v3(sportsMap, 150)) // this one works! But why can't did the other come up undefined?
+
+// at line 72, the syntax array.forEach(([key, value]) => doSomething) worked. Why didn't work in line 123?
