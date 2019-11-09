@@ -150,6 +150,21 @@ console.log(addPeople_v3(sportsMap, 150)) // this one works! But why can't did t
 
 // at line 72, the syntax array.forEach(([key, value]) => doSomething) worked. Why didn't work in line 123?
 
+// // 7. Now the same function but now it has a 3rd parameter: a key where we want to increase the value. It will only increase that value
+
+const addPeople_v4 = (map, key, number) => {
+  const keysAndValues = [...map];
+  keysAndValues.forEach((keyValue) => {
+    if(key === keyValue[0]) {
+      keyValue += number;
+    }
+  });
+  const newMap = new Map(keysAndValues);
+  return newMap;
+}
+
+console.log(addPeople_v4(sportsMap, 'tennis', 111));
+
 
 // =============== EXCERCISE #3 ==================== //
 
@@ -210,6 +225,7 @@ const makeNewMap_3 = (array) => {
 
 const booksMap_3 = makeNewMap_3(booksArray_2);
 console.log(booksMap_3);
+
 
 
 
