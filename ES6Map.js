@@ -185,11 +185,14 @@ const booksMap = new Map(booksArray);
 const makeNewMap = (oldMap) => {
   const newMap = new Map;
   const items = oldMap.entries(); // this give us an array of keys and values in the map
-  items.map(item => {
+  items.forEach(item => {
     newMap.set(parseInt(item[0]), item[1]) // Node says "items.forEach is not a function" oldMap.entires() is not array?  
   });
   return newMap;
 }
+
+// const newBooksMap = makeNewMap(booksMap); 
+// console.log(newBooksMap);
 
 // same thing but with for..of loop
 const makeNewMap_2 = (oldMap) => {
