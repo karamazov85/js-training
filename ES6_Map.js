@@ -149,3 +149,80 @@ const addPeople_v3 = (map, number) => {
 console.log(addPeople_v3(sportsMap, 150)) // this one works! But why can't did the other come up undefined?
 
 // at line 72, the syntax array.forEach(([key, value]) => doSomething) worked. Why didn't work in line 123?
+
+
+// =============== EXCERCISE #3 ==================== //
+
+const books = {
+  "1": {id: 1, title: "Der Steppenwolf", author: "Hermann Hesse"},
+  "2": {id: 2, title: "Demian", author: "Hermann Hesse"},
+  "3": {id: 3, title: "Sommer in Klingsor", author: "Hermann Hesse"},
+  "4": {id: 4, title: "Blood Meridian", author: "Cormac McCarthy"},
+  "5": {id: 5, title: "La Peste", author: "Albert Camus"},
+  "6": {id: 6, title: "Cien Anos de Soledad", author: "Gabriel Garcia Marquez"},
+}
+
+// convert this object into a new Map:
+const booksArray = Object.entries(books);
+const booksMap = new Map(booksArray);
+
+// parse all keys in the Map into integers and return that new Map:
+const makeNewMap = (oldMap) => {
+  const newMap = new Map;
+  const items = oldMap.entries(); // this give us an array of keys and values in the map
+  items.map(item => {
+    newMap.set(parseInt(item[0]), item[1]) // Node says "items.forEach is not a function" oldMap.entires() is not array?  
+  });
+  return newMap;
+}
+
+// same thing but with for..of loop
+const makeNewMap_2 = (oldMap) => {
+  const newMap = new Map;
+  for (let item of oldMap.entries()) {
+    newMap.set(parseInt(item[0]), item[1])
+  }
+  return newMap; // THIS FUCKING WORKED !!! I CANT'T BELIEVE IT :))) // takeaway: map.entries() gives iterable but that's not regular array. iterate over it with for..of.
+}
+
+const booksMap_2 = makeNewMap_2(booksMap);
+console.log(booksMap_2);
+
+// Could we have done this easier? In this case, yes. Here is the object again 
+const books_2 = {
+  "1": {id: 1, title: "Der Steppenwolf", author: "Hermann Hesse"},
+  "2": {id: 2, title: "Demian", author: "Hermann Hesse"},
+  "3": {id: 3, title: "Sommer in Klingsor", author: "Hermann Hesse"},
+  "4": {id: 4, title: "Blood Meridian", author: "Cormac McCarthy"},
+  "5": {id: 5, title: "La Peste", author: "Albert Camus"},
+  "6": {id: 6, title: "Cien Anos de Soledad", author: "Gabriel Garcia Marquez"},
+}
+
+// make an array from the values only as the key is the id itself.
+const booksArray_2 = Object.values(books_2);
+
+// now make a map from this array by setting the id as the key and the value as the value at each iteration. 
+const makeNewMap_3 = (array) => {
+  const newMap = new Map;
+  array.forEach(book => newMap.set(book.id, book));
+  return newMap; 
+}
+
+const booksMap_3 = makeNewMap_3(booksArray_2);
+console.log(booksMap_3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
