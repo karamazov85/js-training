@@ -150,7 +150,7 @@ console.log(addPeople_v3(sportsMap, 150)) // this one works! But why can't did t
 
 // at line 72, the syntax array.forEach(([key, value]) => doSomething) worked. Why didn't work in line 123?
 
-// // 7. Now the same function but now it has a 3rd parameter: a key where we want to increase the value. It will only increase that value
+// 7. Now the same function but now it has a 3rd parameter: a key where we want to increase the value. It will only increase that value
 
 const addPeople_v4 = (map, key, number) => {
   const keysAndValues = [...map];
@@ -163,7 +163,7 @@ const addPeople_v4 = (map, key, number) => {
   return newMap;
 }
 
-console.log(addPeople_v4(sportsMap, 'tennis', 111));
+console.log(addPeople_v4(sportsMap, 'tennis', 111)); // didn't work :(
 
 
 // =============== EXCERCISE #3 ==================== //
@@ -190,7 +190,6 @@ const makeNewMap = (oldMap) => {
   });
   return newMap;
 }
-
 // const newBooksMap = makeNewMap(booksMap); 
 // console.log(newBooksMap);
 
@@ -200,13 +199,14 @@ const makeNewMap_2 = (oldMap) => {
   for (let item of oldMap.entries()) {
     newMap.set(parseInt(item[0]), item[1])
   }
-  return newMap; // THIS FUCKING WORKED !!! I CANT'T BELIEVE IT :))) // takeaway: map.entries() gives iterable but that's not regular array. iterate over it with for..of.
+  return newMap; // THIS WORKED !!! I CANT'T BELIEVE IT :))) // takeaway: map.entries() gives iterable but that's not regular array. iterate over it with for..of.
 }
 
 const booksMap_2 = makeNewMap_2(booksMap);
 console.log(booksMap_2);
 
 // Could we have done this easier? In this case, yes. Here is the object again 
+
 const books_2 = {
   "1": {id: 1, title: "Der Steppenwolf", author: "Hermann Hesse"},
   "2": {id: 2, title: "Demian", author: "Hermann Hesse"},
@@ -223,11 +223,10 @@ const booksArray_2 = Object.values(books_2);
 const makeNewMap_3 = (array) => {
   const newMap = new Map;
   array.forEach(book => newMap.set(book.id, book));
-  return newMap; 
+  return newMap;  // WORKS :)))
 }
-
 const booksMap_3 = makeNewMap_3(booksArray_2);
-console.log(booksMap_3);
+console.log(booksMap_3);  
 
 
 
