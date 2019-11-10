@@ -150,21 +150,13 @@ console.log(addPeople_v3(sportsMap, 150)) // this one works! But why can't did t
 
 // at line 72, the syntax array.forEach(([key, value]) => doSomething) worked. Why didn't work in line 123?
 
-// 7. Now the same function but now it has a 3rd parameter: a key where we want to increase the value. It will only increase that value
-
+// 7. Now a function but now it has a 3rd parameter: a key where we want to increase the value. It will only increase that value
 const addPeople_v4 = (map, key, number) => {
-  const keysAndValues = [...map];
-  keysAndValues.forEach((keyValue) => {
-    if(key === keyValue[0]) {
-      keyValue += number;
-    }
-  });
-  const newMap = new Map(keysAndValues);
-  return newMap;
+  map.set(key, map.get(key) += number)
 }
 
-console.log(addPeople_v4(sportsMap, 'tennis', 111)); // didn't work :(
-
+console.log(addPeople_v4(sportsMap, 'tennis', 111)); // didn't work :( it says undefined 
+console.log(addPeople_v4(sportsMap, 'football', 111)) // dint' work, says undefined
 
 // =============== EXCERCISE #3 ==================== //
 
@@ -203,7 +195,7 @@ const makeNewMap_2 = (oldMap) => {
 }
 
 const booksMap_2 = makeNewMap_2(booksMap);
-console.log(booksMap_2);
+// console.log(booksMap_2);
 
 // Could we have done this easier? In this case, yes. Here is the object again 
 
@@ -226,7 +218,7 @@ const makeNewMap_3 = (array) => {
   return newMap;  // WORKS :)))
 }
 const booksMap_3 = makeNewMap_3(booksArray_2);
-console.log(booksMap_3);  
+// console.log(booksMap_3);  
 
 
 
