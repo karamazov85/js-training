@@ -1,0 +1,20 @@
+{
+  "name": "js-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ES6Map.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node function-composition.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karamazov85/js-training.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karamazov85/js-training/issues"
+  },
+  "homepage": "https://github.com/karamazov85/js-training#readme"
+}

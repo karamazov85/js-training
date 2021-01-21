@@ -96,7 +96,7 @@ const sportsMap = new Map(sports);
 // 2. access a value by Map key 
 console.log(sportsMap.get('football'));
 
-// 3. increase the numbe of spectators for a certain sport. using map.set(key, newValue)
+// 3. increase the number of spectators for a certain sport. using map.set(key, newValue)
 sportsMap.set('swimming', sportsMap.get('swimming')+500); 
 
 // to be able to loop though the Map and add 500 new spectators to each sport's specator count, we need to be able to get the keys in an indexed fashion. This is how you get a key like that:
@@ -133,7 +133,7 @@ console.log(addPeople_v2(sportsMap, 500))
 
 const testArray = [...sportsMap];
 
-testArray.forEach( keyValue => keyValue[1] += 500) // so it works this way...
+testArray.forEach(keyValue => keyValue[1] += 500) // so it works this way...
 
 console.log(testArray)
 
@@ -191,7 +191,7 @@ const makeNewMap_2 = (oldMap) => {
   for (let item of oldMap.entries()) {
     newMap.set(parseInt(item[0]), item[1])
   }
-  return newMap; // THIS WORKED !!! I CANT'T BELIEVE IT :))) // takeaway: map.entries() gives iterable but that's not regular array. iterate over it with for..of.
+  return newMap; // THIS WORKED !!! I CANT'T BELIEVE IT. // takeaway: map.entries() gives iterable but that's not regular array. iterate over it with for..of.
 }
 
 const booksMap_2 = makeNewMap_2(booksMap);
