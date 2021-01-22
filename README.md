@@ -2,6 +2,6 @@
 
 Exercises and some theory to build a solid JS foundation.
 
-They show how I hae been learing to use the language.
+They show how I have been learing the language.
 
-I also use them to periodically re-visit solutions I might need in a current project.
+I periodically re-visit these solutions when I need them in a current project.
