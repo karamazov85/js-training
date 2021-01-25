@@ -12,10 +12,24 @@ test('returns true for "I work on Sundays" and "On Sundays I work"', () => {
     expect(isAnagram("On Sundays I work", "I work on Sundays")).toBeTruthy()
 })
 
-test('returns true for "!RegExp is hard" and "is hard ? RegExp%%%"', () => {
-    expect(isAnagram("!RegExp is hard", "is hard ? RegExp%%%")).toBeTruthy()
+test('returns false for "Elvis lives" and "Elvis livestreams"', () => {
+    expect(isAnagram("Elvis lives","Elvis livestreams")).toBeFalsy()
+})
+
+const isAnagramB = require("./anagram")
+
+test('isAnagram is a function', () => {
+    expect(typeof isAnagramB).toEqual('function');
+})
+
+test('returns true if passed "elvis" and "lives"', () => {
+    expect(isAnagramB("elvis", "lives")).toBeTruthy();
+})
+
+test('returns true for "I work on Sundays" and "On Sundays I work"', () => {
+    expect(isAnagramB("On Sundays I work", "I work on Sundays")).toBeTruthy()
 })
 
 test('returns false for "Elvis lives" and "Elvis livestreams"', () => {
-    expect(isAnagram("Elvis lives","Elvis livestreams")).toBeFalsy()
+    expect(isAnagramB("Elvis lives","Elvis livestreams")).toBeFalsy()
 })

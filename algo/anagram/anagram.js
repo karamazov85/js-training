@@ -22,3 +22,37 @@ const isAnagram = (stringA, stringB) => {
 }
 
 module.exports = isAnagram;
+
+// using Charater mapping
+
+const isAnagramB = (stringA, stringB) => {
+    
+    if(stringA.length !== stringB.length) {
+        return false   
+    } 
+    
+    const createCharMap = (string) => {
+        const sanitizedString = string.toLowerCase().replace(/[^a-z\d]/g, "").split("").sort()
+        let charMap = {}
+        for (let char of sanitizedString) {
+            if(charMap.hasOwnProperty(char)) {
+                charMap[char]++
+            } else {
+                charMap[char] = 1;
+            }
+        }
+        return charMap;
+    }
+
+    const stringAMap = createCharMap(stringA);
+    const stringBMap = createCharMap(stringB);
+
+    for (let char in stringAMap) {
+        if(stringAMap[char] !== stringBMap[char]) {
+            return false
+        }
+        return true;
+    }
+}
+
+module.exports = isAnagramB
