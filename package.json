@@ -4,7 +4,7 @@
   "description": "",
   "main": "ES6Map.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "run": "node function-composition.js"
   },
   "repository": {
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/karamazov85/js-training/issues"
   },
-  "homepage": "https://github.com/karamazov85/js-training#readme"
+  "homepage": "https://github.com/karamazov85/js-training#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
 }
