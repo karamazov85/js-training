@@ -9,3 +9,6 @@ test(' throws Error if one of the arguments is not an array', () => {
     // you have to wrap the function in an anonymous function inside expect()!!!
     expect(() => {mergeArrays([1,2,4], [4,5,6], "kite")}).toThrow(TypeError);
 })
+
+// more info on why the anonymous function is needed here:
+// https://stackoverflow.com/questions/46042613/how-to-test-the-type-of-a-thrown-exception-in-jest

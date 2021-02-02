@@ -17,7 +17,6 @@ const mergeArrays = (...args) => { // we don't know how many args we will have. 
     const uniqueValues = [ ...new Set(flat) ]
     const uniqueValues2 = flat.reduce((acc, curr) => { return acc.includes(curr) ? acc : [ ...acc, curr ]}, [])
     const uniqueValues3 = flat.filter((value, index) => flat.indexOf(value) === index)
-    
     return uniqueValues;
 }
 
