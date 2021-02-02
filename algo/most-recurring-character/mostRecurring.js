@@ -23,3 +23,29 @@ const mostRecurringChar = string => {
 }
 
 module.exports = mostRecurringChar;
+
+
+// probably more elegant with reduce
+const mostRecurringCharB = string => {
+    let charMap = {}
+
+    string.split("") // it's case sensitive now
+          .forEach(char => {
+              if(charMap.hasOwnProperty(char)){
+                  charMap[char]++
+              } else {
+                  charMap[char] = 1
+              }
+          })
+    
+    const mapEntries = Object.entries(charMap);
+
+    const mostRecurring = mapEntries.reduce((mostRec, curr) => {
+        return mostRec[1] > curr[1] ? mostRec : curr
+    },[])
+
+    return mostRecurring[0]
+
+}
+
+module.exports = mostRecurringCharB;
