@@ -20,7 +20,4 @@ function findPermutations(string) {
     return permutations;   
 }
 
-let result = findPermutations("aranka")
-console.log(result)
-
 // source: https://levelup.gitconnected.com/find-all-permutations-of-a-string-in-javascript-af41bfe072d2

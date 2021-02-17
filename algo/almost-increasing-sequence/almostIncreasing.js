@@ -20,6 +20,5 @@ function almostIncreasingSequence(sequence) {
       if (sequence[i] <= sequence[i-2] && sequence[i+1] <= sequence[i-1]) return false;
     }
   }
-  
   return true;
 }
